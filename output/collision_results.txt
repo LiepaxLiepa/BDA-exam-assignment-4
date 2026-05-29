@@ -1,0 +1,15 @@
+AIS VESSEL COLLISION DETECTION - RESULTS
+=======================================================
+Vessel A MMSI        : 111219512
+Vessel A Name        : MMSI 111219512
+Vessel B MMSI        : 232018267
+Vessel B Name        : MV SCOT CARRIER
+Timestamp A          : 2021-12-13 07:22:14
+Timestamp B          : 2021-12-13 07:21:21
+Time difference      : 53 s
+Collision latitude   : 55.241478
+Collision longitude  : 14.227597
+Closest approach     : 0.56 m
+SOG A                : 1.6 kn
+SOG B                : 0.7 kn
+=======================================================

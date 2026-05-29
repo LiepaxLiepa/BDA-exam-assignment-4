@@ -1,0 +1,9 @@
+data/
+spark-tmp/
+*.tar
+*.tar.gz
+__pycache__/
+.venv/
+*.pyc
+.Rhistory
+.idea/

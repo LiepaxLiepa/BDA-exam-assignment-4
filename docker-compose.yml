@@ -1,0 +1,31 @@
+services:
+  ais-detector:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ais-collision-detector:latest
+    container_name: ais-collision-detector
+    environment:
+      DATA_DIR: /data
+      OUTPUT_DIR: /output
+      INPUT_GLOB: aisdk-2021-12-*.csv
+      START_TS: "2021-12-01 00:00:00"
+      END_TS: "2021-12-31 23:59:59"
+      CENTER_LAT: "55.225000"
+      CENTER_LON: "14.245000"
+      RADIUS_NM: "50"
+      COLLISION_DISTANCE_M: "500"
+      MIN_COLLISION_DISTANCE_M: "0.5"
+      TIME_TOLERANCE_SECONDS: "60"
+      TRAJECTORY_WINDOW_MIN: "10"
+      SPATIAL_CELL_DEG: "0.002"
+      SPARK_SHUFFLE_PARTITIONS: "512"
+      SPARK_DRIVER_MEMORY: "4g"
+      SPARK_EXECUTOR_MEMORY: "4g"
+      EXCLUDE_RESCUE_VESSELS: "true"
+    volumes:
+      - ./data:/data:ro
+      - ./output:/output
+      - ./spark-tmp:/tmp/spark-local
+    mem_limit: 8g
+    restart: "no"
